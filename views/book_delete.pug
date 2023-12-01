@@ -1,0 +1,15 @@
+
+extends layout
+
+block content
+    h1= title
+    p Are you sure you want to delete this book?
+
+    if bookInstances.length > 0
+        h2 BookInstances
+        ul
+            each instance in bookInstances
+                li= instance.status
+
+    form(action=action, method='post')
+        input(type='submit', value='Delete')
